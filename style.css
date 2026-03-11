@@ -1,0 +1,235 @@
+/* POKETAPP - ESTILOS PREMIUM (SORTEO)
+   Optimizado para cartas de 20KB - 40KB
+*/
+
+/* 1. RESET Y BASES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* AJUSTE DEL BODY CON EL NUEVO FONDO Y FUENTE */
+body {
+    background: radial-gradient(circle at center, #1a1a2e 0%, #050505 100%);
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+
+
+.container {
+    width: 100%;
+    max-width: 420px; /* Un poco más estrecho para móviles modernos */
+}
+
+/* 2. CONTENEDOR PRINCIPAL */
+.giveaway-section {
+    background: #0f0f0f;
+    border: 1px solid #222;
+    border-radius: 28px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+/* 3. HEADER Y LOGO */
+.header {
+    margin-bottom: 15px;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+}
+
+.logo span {
+    color: #00d4ff; /* El azul distintivo de PoketApp */
+}
+
+/* EL BADGE CON ANIMACIÓN DE NEÓN */
+.status-badge {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    margin-top: 5px;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    
+    /* Aplicamos la animación */
+    animation: pulsoNeon 2s infinite;
+}
+
+
+
+
+/* DEFINICIÓN DE LA ANIMACIÓN */
+@keyframes pulsoNeon {
+    0% {
+        box-shadow: 0 0 5px rgba(0, 212, 255, 0.2);
+        text-shadow: 0 0 0px rgba(0, 212, 255, 0);
+    }
+    50% {
+        box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        text-shadow: 0 0 8px rgba(0, 212, 255, 0.8);
+        background: rgba(0, 212, 255, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 5px rgba(0, 212, 255, 0.2);
+        text-shadow: 0 0 0px rgba(0, 212, 255, 0);
+    }
+}
+/* 4. EXHIBICIÓN DE LA CARTA (EL CORAZÓN) */
+.card-display {
+    position: relative;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main-card {
+    width: 200px; /* Tamaño ajustado para que el botón suba */
+    border-radius: 12px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.9);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.3s ease;
+}
+
+.main-card:hover {
+    transform: scale(1.02);
+}
+
+.glow-effect {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 160px;
+    height: 160px;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.3) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    filter: blur(35px);
+}
+
+/* 5. INFORMACIÓN DEL SORTEO */
+.card-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 2px;
+}
+
+.card-rarity {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+.card-rarity span {
+    color: #00d4ff;
+    font-weight: 600;
+}
+
+/* 6. CONTADOR (TIMER) */
+.timer {
+    background: #181818;
+    padding: 12px;
+    border-radius: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #252525;
+}
+
+.timer p {
+    font-size: 0.75rem;
+    color: #aaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.countdown {
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: #fff;
+    margin-top: 4px;
+    font-variant-numeric: tabular-nums; /* Evita que los números salten */
+}
+
+/* 7. ESPACIO PARA PUBLICIDAD (COMPACTO) */
+.ad-container {
+    margin-bottom: 15px;
+}
+
+.ad-container p {
+    font-size: 0.6rem;
+    color: #333;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.ad-slot {
+    width: 100%;
+    height: 80px; /* Reducido para optimizar espacio */
+    background: #111;
+    border: 1px dashed #222;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 8. BOTÓN DE GOOGLE */
+.btn-google {
+    width: 100%;
+    background: #ffffff;
+    color: #000;
+    border: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.btn-google:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
+}
+
+.btn-google img {
+    width: 20px;
+}
+
+/* 9. PIE DE PÁGINA */
+.terms {
+    font-size: 0.65rem;
+    color: #444;
+    margin-top: 15px;
+    line-height: 1.4;
+}
+
+/* OPTIMIZACIÓN PARA PANTALLAS MUY PEQUEÑAS */
+@media (max-height: 700px) {
+    .main-card { width: 170px; }
+    .giveaway-section { padding: 15px; }
+    .logo { font-size: 1.2rem; }
+}
+

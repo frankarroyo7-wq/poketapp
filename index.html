@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Giveaway - Pokémon TCG Pocket</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <section class="giveaway-section">
+            
+            <header class="header">
+                <h1 class="logo">POKET<span>APP</span></h1>
+                <div class="status-badge">● SORTEO ACTIVO</div>
+            </header>
+
+            <div class="card-display">
+                <div class="glow-effect"></div>
+                <img src="erikafa.webp" alt="Carta Rara" class="main-card">
+            </div>
+
+            <div class="info-box">
+                <h2 class="card-title">Erika</h2>
+                <p class="card-rarity">Rareza: <span>Full Art(⭐⭐)</span></p>
+                
+                <div class="timer">
+                    <p>El sorteo termina en:</p>
+                    <div class="countdown">23h 59m 59s</div>
+                </div>
+
+                <div class="ad-container">
+                    <p>Publicidad</p>
+                    <div class="ad-slot"></div>
+                </div>
+
+                <button class="btn-google" id="loginBtn">
+                    <img src="https://www.google.com/favicon.ico" alt="Google">
+                    Participar con Google
+                </button>
+                
+                <p class="terms">Al participar, aceptas los términos de la comunidad.</p>
+            </div>
+
+        </section>
+    </main>
+<script>
+    // Configura aquí la fecha del sorteo (Año, Mes -1, Día, Hora, Minuto)
+    // Ejemplo: 15 de marzo de 2026 a las 20:00
+    const fechaSorteo = new Date(2026, 2, 15, 20, 0, 0).getTime();
+
+    const x = setInterval(function() {
+        const ahora = new Date().getTime();
+        const distancia = fechaSorteo - ahora;
+
+        const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+        // Mostramos el resultado en el elemento con clase "countdown"
+        document.querySelector(".countdown").innerHTML = horas + "h " + minutos + "m " + segundos + "s ";
+
+        // Si el tiempo se acaba
+        if (distancia < 0) {
+            clearInterval(x);
+            document.querySelector(".countdown").innerHTML = "SORTEO CERRADO";
+        }
+    }, 1000);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script type="module" src="firebase-config.js"></script>
+<script type="module" src="app.js"></script>
+
+
+</body>
+</html>
