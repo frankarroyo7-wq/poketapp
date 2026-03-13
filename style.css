@@ -232,4 +232,56 @@ body {
     .giveaway-section { padding: 15px; }
     .logo { font-size: 1.2rem; }
 }
+/* Contenedor del acceso por código */
+.login-manual {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #333;
+    margin-top: 20px;
+}
+
+/* El título "¿Ya tienes código?" */
+.login-manual p {
+    color: #aaa;
+    font-size: 0.85em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* El cuadro de texto (Input) */
+#inputCodigo {
+    background: #111;
+    color: #fff;
+    border: 1px solid #444;
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+    font-family: monospace; /* Se ve más "técnico" */
+}
+
+#inputCodigo:focus {
+    border-color: #00ff00; /* Brillo verde al tocarlo */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.2);
+}
+
+/* El botón de Validar */
+#btnEntrarCodigo {
+    background: transparent;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btnEntrarCodigo:hover {
+    background: #00ff00;
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+}
 
